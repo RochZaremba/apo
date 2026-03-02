@@ -4,11 +4,18 @@ import com.atm.model.Account;
 import com.atm.model.Transaction;
 import com.atm.model.TransactionType;
 import com.atm.store.DataStore;
+import com.atm.util.ATMLogger;
+
+import java.util.logging.Logger;
 
 /**
- * Serwis przelewów między kontami.
+ * Serwis przelewów między kontami z pełną walidacją.
+ *
+ * @author Kornel Szkutnik
+ * @version 2.0
  */
 public class TransactionService {
+    private static final Logger logger = ATMLogger.getLogger(TransactionService.class);
     private final DataStore dataStore;
 
     public TransactionService() {
@@ -17,6 +24,12 @@ public class TransactionService {
 
     /**
      * Wykonuje przelew z konta źródłowego na konto docelowe.
+     *
+     * @param fromAccount     konto nadawcy
+     * @param toAccountNumber numer konta odbiorcy
+     * @param amount          kwota przelewu
+     * @return potwierdzenie transakcji
+     * @throws IllegalArgumentException jeśli walidacja się nie powiodła
      */
     public Transaction transfer(Account fromAccount, String toAccountNumber, double amount) {
         if (amount <= 0) {
@@ -41,8 +54,10 @@ public class TransactionService {
         toAccount.deposit(amount);
 
         Transaction tx = new Transaction(TransactionType.TRANSFER, amount,
-                fromAccount.getAccountNumber(), toAccountNumber);
+                fromAccount.getAccountNumber(), toAccountNumber, fromAccount.getBalance());
         dataStore.addTransaction(tx);
+        logger.info("Przelew: " + amount + " PLN z " + fromAccount.getAccountNumber()
+                + " na " + toAccountNumber);
         return tx;
     }
 }
