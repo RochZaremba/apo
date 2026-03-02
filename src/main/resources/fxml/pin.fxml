@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atm.controller.PinController"
+      alignment="CENTER" spacing="20" styleClass="screen-root">
+    <padding><Insets topRightBottomLeft="40"/></padding>
+
+    <Label text="🔐" styleClass="atm-icon"/>
+    <Label text="WERYFIKACJA PIN" styleClass="title-label"/>
+    <Label fx:id="cardInfoLabel" styleClass="subtitle-label"/>
+
+    <VBox alignment="CENTER" spacing="10">
+        <PasswordField fx:id="pinField" promptText="Wprowadź PIN" styleClass="pin-field" maxWidth="200"/>
+        <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+    </VBox>
+
+    <!-- Klawiatura numeryczna -->
+    <GridPane alignment="CENTER" hgap="10" vgap="10" styleClass="numpad">
+        <Button text="1" onAction="#onNumPad" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="numpad-button"/>
+        <Button text="2" onAction="#onNumPad" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="numpad-button"/>
+        <Button text="3" onAction="#onNumPad" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="numpad-button"/>
+        <Button text="4" onAction="#onNumPad" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="numpad-button"/>
+        <Button text="5" onAction="#onNumPad" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="numpad-button"/>
+        <Button text="6" onAction="#onNumPad" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="numpad-button"/>
+        <Button text="7" onAction="#onNumPad" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="numpad-button"/>
+        <Button text="8" onAction="#onNumPad" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="numpad-button"/>
+        <Button text="9" onAction="#onNumPad" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="numpad-button"/>
+        <Button text="⌫" onAction="#onBackspace" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="numpad-button-special"/>
+        <Button text="0" onAction="#onNumPad" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="numpad-button"/>
+        <Button text="✓" onAction="#onConfirmPin" GridPane.columnIndex="2" GridPane.rowIndex="3" styleClass="numpad-button-confirm"/>
+    </GridPane>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Button text="ANULUJ" onAction="#onCancel" styleClass="cancel-button" maxWidth="320"/>
+</VBox>

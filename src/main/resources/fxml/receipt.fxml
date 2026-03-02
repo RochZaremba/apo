@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atm.controller.ReceiptController"
+      alignment="CENTER" spacing="15" styleClass="screen-root">
+    <padding><Insets topRightBottomLeft="40"/></padding>
+
+    <Label text="✅ POTWIERDZENIE" styleClass="title-label"/>
+
+    <VBox alignment="CENTER" spacing="10" styleClass="receipt-card">
+        <Label text="Operacja:" styleClass="receipt-label"/>
+        <Label fx:id="typeLabel" styleClass="receipt-value"/>
+
+        <Separator/>
+
+        <Label text="Kwota:" styleClass="receipt-label"/>
+        <Label fx:id="amountLabel" styleClass="receipt-value-big"/>
+
+        <Separator/>
+
+        <Label fx:id="targetLabel" styleClass="receipt-label" visible="false" managed="false"/>
+        <Label fx:id="targetValueLabel" styleClass="receipt-value" visible="false" managed="false"/>
+
+        <Label text="Nr transakcji:" styleClass="receipt-label"/>
+        <Label fx:id="txIdLabel" styleClass="receipt-value"/>
+
+        <Label text="Data i czas:" styleClass="receipt-label"/>
+        <Label fx:id="timestampLabel" styleClass="receipt-value"/>
+
+        <Separator/>
+
+        <Label text="Nowe saldo:" styleClass="receipt-label"/>
+        <Label fx:id="newBalanceLabel" styleClass="receipt-value-big"/>
+    </VBox>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Button text="⬅ Powrót do menu" onAction="#onBack" styleClass="primary-button" maxWidth="320"/>
+</VBox>

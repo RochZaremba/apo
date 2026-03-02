@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atm.controller.DepositController"
+      alignment="CENTER" spacing="20" styleClass="screen-root">
+    <padding><Insets topRightBottomLeft="40"/></padding>
+
+    <Label text="💵 WPŁATA" styleClass="title-label"/>
+    <Label fx:id="balanceLabel" styleClass="subtitle-label"/>
+
+    <VBox alignment="CENTER" spacing="12">
+        <Label text="Wprowadź kwotę wpłaty:" styleClass="field-label"/>
+        <HBox alignment="CENTER" spacing="10">
+            <TextField fx:id="amountField" promptText="Kwota" styleClass="input-field" maxWidth="200"/>
+            <Label text="PLN" styleClass="field-label"/>
+        </HBox>
+        <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+    </VBox>
+
+    <Button text="WPŁAĆ" onAction="#onDeposit" styleClass="primary-button" maxWidth="320"/>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Button text="⬅ Powrót" onAction="#onBack" styleClass="cancel-button" maxWidth="320"/>
+</VBox>

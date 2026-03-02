@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atm.controller.TransferController"
+      alignment="CENTER" spacing="18" styleClass="screen-root">
+    <padding><Insets topRightBottomLeft="40"/></padding>
+
+    <Label text="🔄 PRZELEW" styleClass="title-label"/>
+    <Label fx:id="balanceLabel" styleClass="subtitle-label"/>
+
+    <VBox alignment="CENTER" spacing="12">
+        <Label text="Numer konta odbiorcy:" styleClass="field-label"/>
+        <TextField fx:id="targetAccountField" promptText="np. PL10-1234-0002" styleClass="input-field" maxWidth="320"/>
+
+        <Label text="Kwota przelewu:" styleClass="field-label"/>
+        <HBox alignment="CENTER" spacing="10">
+            <TextField fx:id="amountField" promptText="Kwota" styleClass="input-field" maxWidth="200"/>
+            <Label text="PLN" styleClass="field-label"/>
+        </HBox>
+
+        <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+    </VBox>
+
+    <VBox alignment="CENTER" spacing="4">
+        <Label text="Dostępne konta demo:" styleClass="hint-label"/>
+        <Label text="PL10-1234-0001 — Jan Kowalski" styleClass="hint-label"/>
+        <Label text="PL10-1234-0002 — Anna Nowak" styleClass="hint-label"/>
+        <Label text="PL10-1234-0003 — Piotr Wiśniewski" styleClass="hint-label"/>
+    </VBox>
+
+    <Button text="WYKONAJ PRZELEW" onAction="#onTransfer" styleClass="primary-button" maxWidth="320"/>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Button text="⬅ Powrót" onAction="#onBack" styleClass="cancel-button" maxWidth="320"/>
+</VBox>

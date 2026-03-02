@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atm.controller.WelcomeController"
+      alignment="CENTER" spacing="30" styleClass="screen-root">
+    <padding><Insets topRightBottomLeft="40"/></padding>
+
+    <Label text="🏦" styleClass="atm-icon"/>
+    <Label text="BANKOMAT" styleClass="title-label"/>
+    <Label text="Witamy w systemie bankomatowym" styleClass="subtitle-label"/>
+
+    <VBox alignment="CENTER" spacing="12" styleClass="card-section">
+        <Label text="Numer karty:" styleClass="field-label"/>
+        <TextField fx:id="cardNumberField" promptText="XXXX-XXXX-XXXX-XXXX" styleClass="input-field" maxWidth="320"/>
+        <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+    </VBox>
+
+    <Button text="WŁÓŻ KARTĘ" onAction="#onInsertCard" styleClass="primary-button" maxWidth="320"/>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <VBox alignment="CENTER" spacing="4">
+        <Label text="Karty demo:" styleClass="hint-label"/>
+        <Label text="1111-2222-3333-4444  (PIN: 1234)" styleClass="hint-label"/>
+        <Label text="5555-6666-7777-8888  (PIN: 5678)" styleClass="hint-label"/>
+        <Label text="9999-0000-1111-2222  (PIN: 0000)" styleClass="hint-label"/>
+    </VBox>
+</VBox>

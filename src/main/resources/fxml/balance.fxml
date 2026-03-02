@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atm.controller.BalanceController"
+      alignment="CENTER" spacing="25" styleClass="screen-root">
+    <padding><Insets topRightBottomLeft="40"/></padding>
+
+    <Label text="📊 STAN KONTA" styleClass="title-label"/>
+
+    <VBox alignment="CENTER" spacing="15" styleClass="balance-card">
+        <Label fx:id="ownerLabel" styleClass="field-label"/>
+        <Label fx:id="accountLabel" styleClass="hint-label"/>
+        <Label fx:id="balanceLabel" styleClass="balance-amount"/>
+        <Label text="PLN" styleClass="balance-currency"/>
+    </VBox>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Button text="⬅ Powrót do menu" onAction="#onBack" styleClass="cancel-button" maxWidth="320"/>
+</VBox>

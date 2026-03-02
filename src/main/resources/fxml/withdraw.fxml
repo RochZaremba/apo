@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atm.controller.WithdrawController"
+      alignment="CENTER" spacing="15" styleClass="screen-root">
+    <padding><Insets topRightBottomLeft="40"/></padding>
+
+    <Label text="💰 WYPŁATA" styleClass="title-label"/>
+    <Label fx:id="balanceLabel" styleClass="subtitle-label"/>
+
+    <Label text="Wybierz kwotę:" styleClass="field-label"/>
+
+    <GridPane alignment="CENTER" hgap="12" vgap="12">
+        <Button text="50 PLN" onAction="#onPresetAmount" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="amount-button"/>
+        <Button text="100 PLN" onAction="#onPresetAmount" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="amount-button"/>
+        <Button text="200 PLN" onAction="#onPresetAmount" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="amount-button"/>
+        <Button text="500 PLN" onAction="#onPresetAmount" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="amount-button"/>
+        <Button text="1000 PLN" onAction="#onPresetAmount" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="amount-button"/>
+        <Button text="2000 PLN" onAction="#onPresetAmount" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="amount-button"/>
+    </GridPane>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Inna kwota:" styleClass="field-label"/>
+        <TextField fx:id="customAmountField" promptText="Kwota" styleClass="input-field" maxWidth="150"/>
+        <Label text="PLN" styleClass="field-label"/>
+    </HBox>
+
+    <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+
+    <Button text="WYPŁAĆ" onAction="#onWithdrawCustom" styleClass="primary-button" maxWidth="320"/>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Button text="⬅ Powrót" onAction="#onBack" styleClass="cancel-button" maxWidth="320"/>
+</VBox>
