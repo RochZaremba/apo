@@ -2,6 +2,7 @@ package com.atm.controller;
 
 import com.atm.model.Account;
 import com.atm.service.AuthService;
+import com.atm.service.SessionManager;
 import com.atm.ui.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,7 +25,7 @@ public class PinController {
     @FXML
     public void initialize() {
         cardNumber = SceneManager.getInstance().getControllerData();
-        cardInfoLabel.setText("Karta: " + maskCardNumber(cardNumber));
+        cardInfoLabel.setText("Karta: ****-****-****-" + cardNumber.substring(cardNumber.length() - 4));
     }
 
     @FXML
@@ -56,6 +57,8 @@ public class PinController {
 
         try {
             Account account = authService.authenticate(cardNumber, pin);
+            // Rozpocznij sesję z timeoutem
+            SessionManager.getInstance().startSession();
             SceneManager.getInstance().setControllerData(account);
             SceneManager.getInstance().switchScene("menu.fxml");
         } catch (AuthService.AuthException e) {
@@ -67,13 +70,6 @@ public class PinController {
     @FXML
     private void onCancel() {
         SceneManager.getInstance().switchScene("welcome.fxml");
-    }
-
-    private String maskCardNumber(String card) {
-        if (card.length() > 4) {
-            return "****-****-****-" + card.substring(card.length() - 4);
-        }
-        return card;
     }
 
     private void showError(String message) {

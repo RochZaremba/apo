@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atm.controller.HistoryController"
+      alignment="CENTER" spacing="12" styleClass="screen-root">
+    <padding><Insets topRightBottomLeft="30"/></padding>
+
+    <Label text="📜 HISTORIA TRANSAKCJI" styleClass="title-label"/>
+    <Label fx:id="accountLabel" styleClass="subtitle-label"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="scroll-pane">
+        <VBox fx:id="historyContainer" spacing="8" styleClass="history-list">
+            <padding><Insets topRightBottomLeft="10"/></padding>
+        </VBox>
+    </ScrollPane>
+
+    <Label fx:id="emptyLabel" text="Brak transakcji do wyświetlenia." styleClass="hint-label"
+           visible="false" managed="false"/>
+
+    <Button text="⬅ Powrót do menu" onAction="#onBack" styleClass="cancel-button" maxWidth="320"/>
+</VBox>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atm.controller.ChangePinController"
+      alignment="CENTER" spacing="18" styleClass="screen-root">
+    <padding><Insets topRightBottomLeft="40"/></padding>
+
+    <Label text="🔑 ZMIANA PIN" styleClass="title-label"/>
+    <Label fx:id="infoLabel" styleClass="subtitle-label" text="Wprowadź aktualny i nowy PIN"/>
+
+    <VBox alignment="CENTER" spacing="12" styleClass="card-section">
+        <Label text="Aktualny PIN:" styleClass="field-label"/>
+        <PasswordField fx:id="oldPinField" promptText="Aktualny PIN" styleClass="pin-field" maxWidth="200"/>
+
+        <Label text="Nowy PIN:" styleClass="field-label"/>
+        <PasswordField fx:id="newPinField" promptText="Nowy PIN (4 cyfry)" styleClass="pin-field" maxWidth="200"/>
+
+        <Label text="Potwierdź nowy PIN:" styleClass="field-label"/>
+        <PasswordField fx:id="confirmPinField" promptText="Powtórz nowy PIN" styleClass="pin-field" maxWidth="200"/>
+
+        <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+    </VBox>
+
+    <Button text="ZMIEŃ PIN" onAction="#onChangePin" styleClass="primary-button" maxWidth="320"/>
+
+    <Region VBox.vgrow="ALWAYS"/>
+
+    <Button text="⬅ Powrót" onAction="#onBack" styleClass="cancel-button" maxWidth="320"/>
+</VBox>

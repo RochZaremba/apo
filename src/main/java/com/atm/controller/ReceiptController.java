@@ -36,7 +36,7 @@ public class ReceiptController {
         amountLabel.setText(String.format("%.2f PLN", tx.getAmount()));
         txIdLabel.setText("#" + tx.getId());
         timestampLabel.setText(tx.getFormattedTimestamp());
-        newBalanceLabel.setText(String.format("%.2f PLN", account.getBalance()));
+        newBalanceLabel.setText(String.format("%.2f PLN", tx.getBalanceAfter()));
 
         // Pokaż konto docelowe dla przelewów
         if (tx.getType() == TransactionType.TRANSFER && tx.getTargetAccountNumber() != null) {

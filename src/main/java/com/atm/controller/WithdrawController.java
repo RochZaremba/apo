@@ -3,6 +3,7 @@ package com.atm.controller;
 import com.atm.model.Account;
 import com.atm.model.Transaction;
 import com.atm.service.AccountService;
+import com.atm.ui.DialogHelper;
 import com.atm.ui.SceneManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,6 +53,12 @@ public class WithdrawController {
     }
 
     private void doWithdraw(double amount) {
+        boolean confirmed = DialogHelper.confirm("Potwierdzenie wypłaty",
+                "Czy na pewno chcesz wypłacić?",
+                String.format("Kwota: %.2f PLN", amount));
+        if (!confirmed)
+            return;
+
         try {
             Transaction tx = accountService.withdraw(account, amount);
             SceneManager.getInstance().setControllerData(new Object[] { account, tx });
@@ -68,7 +75,8 @@ public class WithdrawController {
     }
 
     private void updateBalanceLabel() {
-        balanceLabel.setText(String.format("Dostępne środki: %.2f PLN", account.getBalance()));
+        balanceLabel.setText(String.format("Dostępne: %.2f PLN  |  Limit: %.2f PLN",
+                account.getBalance(), account.getRemainingDailyLimit()));
     }
 
     private void showError(String message) {

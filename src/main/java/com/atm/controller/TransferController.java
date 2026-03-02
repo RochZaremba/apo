@@ -3,6 +3,7 @@ package com.atm.controller;
 import com.atm.model.Account;
 import com.atm.model.Transaction;
 import com.atm.service.TransactionService;
+import com.atm.ui.DialogHelper;
 import com.atm.ui.SceneManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -44,6 +45,13 @@ public class TransferController {
 
         try {
             double amount = Double.parseDouble(amountText);
+
+            boolean confirmed = DialogHelper.confirm("Potwierdzenie przelewu",
+                    "Czy na pewno chcesz wykonać przelew?",
+                    String.format("Na konto: %s\nKwota: %.2f PLN", targetAccount, amount));
+            if (!confirmed)
+                return;
+
             Transaction tx = transactionService.transfer(account, targetAccount, amount);
             SceneManager.getInstance().setControllerData(new Object[] { account, tx });
             SceneManager.getInstance().switchScene("receipt.fxml");

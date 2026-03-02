@@ -3,6 +3,7 @@ package com.atm.controller;
 import com.atm.model.Account;
 import com.atm.model.Transaction;
 import com.atm.service.AccountService;
+import com.atm.ui.DialogHelper;
 import com.atm.ui.SceneManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -36,6 +37,13 @@ public class DepositController {
 
         try {
             double amount = Double.parseDouble(text);
+
+            boolean confirmed = DialogHelper.confirm("Potwierdzenie wpłaty",
+                    "Czy na pewno chcesz wpłacić?",
+                    String.format("Kwota: %.2f PLN", amount));
+            if (!confirmed)
+                return;
+
             Transaction tx = accountService.deposit(account, amount);
             SceneManager.getInstance().setControllerData(new Object[] { account, tx });
             SceneManager.getInstance().switchScene("receipt.fxml");

@@ -5,20 +5,25 @@
 <?import javafx.geometry.Insets?>
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.atm.controller.MenuController"
-      alignment="CENTER" spacing="15" styleClass="screen-root">
-    <padding><Insets topRightBottomLeft="40"/></padding>
+      alignment="CENTER" spacing="12" styleClass="screen-root">
+    <padding><Insets topRightBottomLeft="30"/></padding>
 
     <Label text="MENU GŁÓWNE" styleClass="title-label"/>
     <Label fx:id="welcomeLabel" styleClass="subtitle-label"/>
 
-    <VBox alignment="CENTER" spacing="12" styleClass="menu-buttons">
+    <VBox alignment="CENTER" spacing="10" styleClass="menu-buttons">
         <Button text="💰  Wypłata" onAction="#onWithdraw" styleClass="menu-button" maxWidth="320"/>
         <Button text="💵  Wpłata" onAction="#onDeposit" styleClass="menu-button" maxWidth="320"/>
         <Button text="📊  Sprawdź saldo" onAction="#onBalance" styleClass="menu-button" maxWidth="320"/>
         <Button text="🔄  Przelew" onAction="#onTransfer" styleClass="menu-button" maxWidth="320"/>
+        <Button text="📜  Historia transakcji" onAction="#onHistory" styleClass="menu-button" maxWidth="320"/>
+        <Button text="🔑  Zmiana PIN" onAction="#onChangePin" styleClass="menu-button" maxWidth="320"/>
     </VBox>
 
     <Region VBox.vgrow="ALWAYS"/>
 
-    <Button text="🚪  Zakończ sesję" onAction="#onLogout" styleClass="cancel-button" maxWidth="320"/>
+    <HBox alignment="CENTER" spacing="12">
+        <Button fx:id="themeButton" text="🌙 Motyw" onAction="#onToggleTheme" styleClass="cancel-button"/>
+        <Button text="🚪 Zakończ" onAction="#onLogout" styleClass="cancel-button"/>
+    </HBox>
 </VBox>

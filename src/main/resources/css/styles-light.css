@@ -1,10 +1,10 @@
 /* ================================================
-   BANKOMAT ATM — Dark Premium Theme
+   BANKOMAT ATM — Light Premium Theme
    ================================================ */
 
 /* ---- Root & Base ---- */
 .screen-root {
-    -fx-background-color: linear-gradient(to bottom, #0d0d1a, #1a1a2e, #16213e);
+    -fx-background-color: linear-gradient(to bottom, #f0f0f8, #e8e8f0, #dddde8);
     -fx-padding: 30;
 }
 
@@ -12,26 +12,26 @@
 .title-label {
     -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-text-fill: #e0e0ff;
+    -fx-text-fill: #1a1a3e;
     -fx-font-family: "System";
-    -fx-effect: dropshadow(gaussian, rgba(100, 100, 255, 0.3), 10, 0, 0, 2);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 80, 0.1), 8, 0, 0, 2);
 }
 
 .subtitle-label {
     -fx-font-size: 15px;
-    -fx-text-fill: #8888aa;
+    -fx-text-fill: #555588;
     -fx-font-family: "System";
 }
 
 .field-label {
     -fx-font-size: 14px;
-    -fx-text-fill: #b0b0d0;
+    -fx-text-fill: #333366;
     -fx-font-family: "System";
 }
 
 .hint-label {
     -fx-font-size: 11px;
-    -fx-text-fill: #555577;
+    -fx-text-fill: #888899;
     -fx-font-family: "Monospaced";
 }
 
@@ -41,22 +41,22 @@
 
 .error-label {
     -fx-font-size: 13px;
-    -fx-text-fill: #ff5555;
+    -fx-text-fill: #cc3333;
     -fx-font-family: "System";
     -fx-padding: 6 12;
-    -fx-background-color: rgba(255, 50, 50, 0.1);
+    -fx-background-color: rgba(220, 50, 50, 0.08);
     -fx-background-radius: 6;
 }
 
 /* ---- Input Fields ---- */
 .input-field {
-    -fx-background-color: #12122a;
-    -fx-border-color: #333366;
+    -fx-background-color: white;
+    -fx-border-color: #bbbbcc;
     -fx-border-width: 2;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
-    -fx-text-fill: #e0e0ff;
-    -fx-prompt-text-fill: #555577;
+    -fx-text-fill: #1a1a3e;
+    -fx-prompt-text-fill: #999999;
     -fx-font-size: 16px;
     -fx-padding: 10 14;
     -fx-font-family: "Monospaced";
@@ -64,16 +64,16 @@
 
 .input-field:focused {
     -fx-border-color: #4466cc;
-    -fx-effect: dropshadow(gaussian, rgba(68, 102, 204, 0.4), 12, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(68, 102, 204, 0.2), 10, 0, 0, 0);
 }
 
 .pin-field {
-    -fx-background-color: #12122a;
-    -fx-border-color: #333366;
+    -fx-background-color: white;
+    -fx-border-color: #bbbbcc;
     -fx-border-width: 2;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
-    -fx-text-fill: #e0e0ff;
+    -fx-text-fill: #1a1a3e;
     -fx-font-size: 28px;
     -fx-padding: 10 14;
     -fx-alignment: CENTER;
@@ -82,80 +82,80 @@
 
 .pin-field:focused {
     -fx-border-color: #4466cc;
-    -fx-effect: dropshadow(gaussian, rgba(68, 102, 204, 0.4), 12, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(68, 102, 204, 0.2), 10, 0, 0, 0);
 }
 
 /* ---- Buttons ---- */
 .primary-button {
-    -fx-background-color: linear-gradient(to bottom, #2266dd, #1a4fc4);
+    -fx-background-color: linear-gradient(to bottom, #3377ee, #2266dd);
     -fx-text-fill: white;
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-padding: 12 32;
     -fx-background-radius: 10;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(34, 102, 221, 0.4), 12, 0, 0, 3);
+    -fx-effect: dropshadow(gaussian, rgba(34, 102, 221, 0.3), 10, 0, 0, 2);
 }
 
 .primary-button:hover {
-    -fx-background-color: linear-gradient(to bottom, #3377ee, #2266dd);
-    -fx-effect: dropshadow(gaussian, rgba(51, 119, 238, 0.6), 16, 0, 0, 4);
+    -fx-background-color: linear-gradient(to bottom, #4488ff, #3377ee);
+    -fx-effect: dropshadow(gaussian, rgba(51, 119, 238, 0.5), 14, 0, 0, 3);
 }
 
 .primary-button:pressed {
-    -fx-background-color: linear-gradient(to bottom, #1a4fc4, #133ca0);
+    -fx-background-color: linear-gradient(to bottom, #2266dd, #1a55cc);
 }
 
 .cancel-button {
     -fx-background-color: transparent;
-    -fx-border-color: #444466;
+    -fx-border-color: #aaaacc;
     -fx-border-width: 2;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-text-fill: #8888aa;
+    -fx-text-fill: #555588;
     -fx-font-size: 14px;
     -fx-padding: 10 28;
     -fx-cursor: hand;
 }
 
 .cancel-button:hover {
-    -fx-border-color: #6666aa;
-    -fx-text-fill: #aaaacc;
+    -fx-border-color: #7777bb;
+    -fx-text-fill: #333366;
 }
 
 .menu-button {
-    -fx-background-color: linear-gradient(to right, #1a1a3e, #222255);
-    -fx-border-color: #333366;
+    -fx-background-color: linear-gradient(to right, #f8f8ff, #eeeefc);
+    -fx-border-color: #ccccdd;
     -fx-border-width: 1.5;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-text-fill: #d0d0ff;
+    -fx-text-fill: #2a2a55;
     -fx-font-size: 17px;
     -fx-font-weight: bold;
     -fx-padding: 16 20;
     -fx-cursor: hand;
     -fx-alignment: CENTER-LEFT;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0, 0, 2);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 4, 0, 0, 1);
 }
 
 .menu-button:hover {
-    -fx-background-color: linear-gradient(to right, #222255, #2a2a66);
-    -fx-border-color: #4466cc;
-    -fx-effect: dropshadow(gaussian, rgba(68, 102, 204, 0.35), 12, 0, 0, 3);
+    -fx-background-color: linear-gradient(to right, #eeeefc, #e0e0f5);
+    -fx-border-color: #8888cc;
+    -fx-effect: dropshadow(gaussian, rgba(68, 102, 204, 0.2), 8, 0, 0, 2);
 }
 
 .menu-button:pressed {
-    -fx-background-color: linear-gradient(to right, #161632, #1a1a44);
+    -fx-background-color: linear-gradient(to right, #e0e0f0, #d5d5ea);
 }
 
-/* ---- Amount Buttons (Withdrawal) ---- */
+/* ---- Amount Buttons ---- */
 .amount-button {
-    -fx-background-color: #1a1a3e;
-    -fx-border-color: #2a2a55;
+    -fx-background-color: #f5f5ff;
+    -fx-border-color: #ccccdd;
     -fx-border-width: 2;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-text-fill: #c0c0ee;
+    -fx-text-fill: #2a2a55;
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-pref-width: 140;
@@ -164,27 +164,26 @@
 }
 
 .amount-button:hover {
-    -fx-background-color: #222255;
-    -fx-border-color: #4466cc;
-    -fx-effect: dropshadow(gaussian, rgba(68, 102, 204, 0.3), 8, 0, 0, 2);
+    -fx-background-color: #e8e8f5;
+    -fx-border-color: #8888cc;
 }
 
 .amount-button:pressed {
-    -fx-background-color: #141430;
+    -fx-background-color: #d8d8ea;
 }
 
-/* ---- Numpad (PIN Screen) ---- */
+/* ---- Numpad ---- */
 .numpad {
     -fx-padding: 10;
 }
 
 .numpad-button {
-    -fx-background-color: #1a1a3e;
-    -fx-border-color: #2a2a55;
+    -fx-background-color: #f5f5ff;
+    -fx-border-color: #ccccdd;
     -fx-border-width: 1.5;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-text-fill: #d0d0ff;
+    -fx-text-fill: #2a2a55;
     -fx-font-size: 22px;
     -fx-font-weight: bold;
     -fx-pref-width: 70;
@@ -193,21 +192,21 @@
 }
 
 .numpad-button:hover {
-    -fx-background-color: #262650;
-    -fx-border-color: #4466cc;
+    -fx-background-color: #e0e0f2;
+    -fx-border-color: #8888cc;
 }
 
 .numpad-button:pressed {
-    -fx-background-color: #121228;
+    -fx-background-color: #d0d0e5;
 }
 
 .numpad-button-special {
-    -fx-background-color: #2a1a1a;
-    -fx-border-color: #553333;
+    -fx-background-color: #fff0f0;
+    -fx-border-color: #ddaaaa;
     -fx-border-width: 1.5;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-text-fill: #ff8888;
+    -fx-text-fill: #cc4444;
     -fx-font-size: 22px;
     -fx-font-weight: bold;
     -fx-pref-width: 70;
@@ -216,17 +215,17 @@
 }
 
 .numpad-button-special:hover {
-    -fx-background-color: #3a2222;
-    -fx-border-color: #884444;
+    -fx-background-color: #ffe0e0;
+    -fx-border-color: #cc6666;
 }
 
 .numpad-button-confirm {
-    -fx-background-color: #1a2a1a;
-    -fx-border-color: #336633;
+    -fx-background-color: #f0fff0;
+    -fx-border-color: #aaddaa;
     -fx-border-width: 1.5;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-text-fill: #88ff88;
+    -fx-text-fill: #338833;
     -fx-font-size: 22px;
     -fx-font-weight: bold;
     -fx-pref-width: 70;
@@ -235,99 +234,86 @@
 }
 
 .numpad-button-confirm:hover {
-    -fx-background-color: #223a22;
-    -fx-border-color: #448844;
+    -fx-background-color: #e0ffe0;
+    -fx-border-color: #66aa66;
 }
 
 /* ---- Balance Display ---- */
 .balance-card {
-    -fx-background-color: linear-gradient(to bottom, #12123a, #1a1a50);
-    -fx-border-color: #333366;
+    -fx-background-color: linear-gradient(to bottom, #f8f8ff, #eeeefc);
+    -fx-border-color: #ccccdd;
     -fx-border-width: 2;
     -fx-border-radius: 16;
     -fx-background-radius: 16;
     -fx-padding: 30;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 100, 0.4), 20, 0, 0, 5);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 80, 0.1), 12, 0, 0, 3);
 }
 
 .balance-amount {
     -fx-font-size: 42px;
     -fx-font-weight: bold;
-    -fx-text-fill: #44cc88;
+    -fx-text-fill: #228855;
     -fx-font-family: "Monospaced";
 }
 
 .balance-currency {
     -fx-font-size: 18px;
-    -fx-text-fill: #44cc88;
+    -fx-text-fill: #228855;
     -fx-font-weight: bold;
 }
 
 /* ---- Receipt Card ---- */
 .receipt-card {
-    -fx-background-color: linear-gradient(to bottom, #12123a, #181848);
-    -fx-border-color: #333366;
+    -fx-background-color: linear-gradient(to bottom, #f8f8ff, #f0f0fa);
+    -fx-border-color: #ccccdd;
     -fx-border-width: 2;
     -fx-border-radius: 16;
     -fx-background-radius: 16;
     -fx-padding: 25;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 80, 0.3), 15, 0, 0, 4);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 60, 0.08), 10, 0, 0, 3);
 }
 
 .receipt-label {
     -fx-font-size: 12px;
-    -fx-text-fill: #7777aa;
+    -fx-text-fill: #777799;
     -fx-font-family: "System";
 }
 
 .receipt-value {
     -fx-font-size: 15px;
-    -fx-text-fill: #c0c0ee;
+    -fx-text-fill: #2a2a55;
     -fx-font-family: "Monospaced";
     -fx-font-weight: bold;
 }
 
 .receipt-value-big {
     -fx-font-size: 24px;
-    -fx-text-fill: #44cc88;
+    -fx-text-fill: #228855;
     -fx-font-family: "Monospaced";
     -fx-font-weight: bold;
 }
 
 /* ---- Separators ---- */
 .separator .line {
-    -fx-border-color: #2a2a55;
+    -fx-border-color: #ddddee;
     -fx-border-width: 0.5 0 0 0;
 }
 
 /* ---- Card Section ---- */
 .card-section {
-    -fx-background-color: rgba(20, 20, 50, 0.5);
+    -fx-background-color: rgba(240, 240, 255, 0.7);
     -fx-background-radius: 12;
-    -fx-border-color: #2a2a55;
+    -fx-border-color: #ccccdd;
     -fx-border-radius: 12;
     -fx-border-width: 1;
     -fx-padding: 20;
 }
 
-/* ---- ScrollPane ---- */
-.scroll-pane {
-    -fx-background: #0d0d1a;
-}
-
-.scroll-pane .viewport {
-    -fx-background-color: #0d0d1a;
-}
-
-/* ---- History Cards ---- */
-.history-list {
-    -fx-background-color: transparent;
-}
-
+/* ---- History ---- */
 .history-card {
-    -fx-background-color: #12123a;
+    -fx-background-color: #f8f8ff;
     -fx-background-radius: 8;
-    -fx-border-color: #2a2a55;
+    -fx-border-color: #ddddee;
     -fx-border-radius: 8;
     -fx-border-width: 1;
 }
@@ -335,33 +321,42 @@
 .history-type {
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-text-fill: #c0c0ee;
+    -fx-text-fill: #2a2a55;
 }
 
 .history-amount-positive {
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-text-fill: #44cc88;
+    -fx-text-fill: #228855;
 }
 
 .history-amount-negative {
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-text-fill: #ff5555;
+    -fx-text-fill: #cc3333;
 }
 
 .history-date {
     -fx-font-size: 11px;
-    -fx-text-fill: #666688;
+    -fx-text-fill: #888899;
 }
 
 .history-balance {
     -fx-font-size: 11px;
-    -fx-text-fill: #8888aa;
+    -fx-text-fill: #555588;
 }
 
 .history-id {
     -fx-font-size: 10px;
-    -fx-text-fill: #555577;
+    -fx-text-fill: #aaaacc;
     -fx-font-family: "Monospaced";
+}
+
+/* ---- ScrollPane ---- */
+.scroll-pane {
+    -fx-background: #f0f0f8;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #f0f0f8;
 }
