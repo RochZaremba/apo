@@ -1,11 +1,17 @@
 package com.atm.model;
 
 /**
- * Typ karty bankowej.
+ * Typ karty bankowej obsługiwanej przez bankomat.
+ *
+ * @author Roch Zaremba
+ * @version 2.0
  */
 public enum CardType {
+    /** Karta debetowa (płatnicza) */
     DEBIT("Debetowa"),
+    /** Karta kredytowa */
     CREDIT("Kredytowa"),
+    /** Karta bankomatowa */
     ATM("Bankomatowa");
 
     private final String displayName;
@@ -14,6 +20,7 @@ public enum CardType {
         this.displayName = displayName;
     }
 
+    /** @return polska nazwa typu karty */
     public String getDisplayName() {
         return displayName;
     }

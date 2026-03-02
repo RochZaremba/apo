@@ -1,13 +1,22 @@
 package com.atm.model;
 
 /**
- * Typ transakcji bankowej.
+ * Typ transakcji bankowej wykonywanej w bankomacie.
+ *
+ * @author Roch Zaremba
+ * @version 2.0
  */
 public enum TransactionType {
+    /** Wypłata gotówki */
     WITHDRAWAL("Wypłata"),
+    /** Wpłata gotówki */
     DEPOSIT("Wpłata"),
+    /** Przelew na inne konto */
     TRANSFER("Przelew"),
-    BALANCE_CHECK("Sprawdzenie salda");
+    /** Sprawdzenie salda */
+    BALANCE_CHECK("Sprawdzenie salda"),
+    /** Zmiana kodu PIN */
+    PIN_CHANGE("Zmiana PIN");
 
     private final String displayName;
 
@@ -15,6 +24,7 @@ public enum TransactionType {
         this.displayName = displayName;
     }
 
+    /** @return polska nazwa typu operacji */
     public String getDisplayName() {
         return displayName;
     }
